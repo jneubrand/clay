@@ -68,6 +68,7 @@ module.exports = {
       var result = [];
       this.$element.select('input:checked').each(function(item) {
         result.push(item.value);
+        result.push(0); // add a zero to allow byte array to be split on the C side
       });
       return result;
     },
@@ -76,6 +77,7 @@ module.exports = {
       self.$element.select('input').set('checked', false);
       values = values || [];
       values.map(function(value) {
+        if (value === 0) { return; }
         self.$element
           .select('input[value="' + value.replace('"', '\\"') + '"]')
           .set('checked', true);

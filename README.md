@@ -492,8 +492,8 @@ Each component has a **manipulator**. This is a set of methods used to talk to t
 
 | Method | Returns | Event Fired | Description | 
 |--------|---------|-------------| ------------|
-| `.set( [array] value)` | `ClayItem` | `change` | Checks the checkboxes that corresponds to the provided list of values. |
-| `.get()` |  `Array.<string>` | Gets an array of strings representing the list of the values of the checked items |
+| `.set( [array] value)` | `ClayItem` | `change` | Checks the checkboxes that corresponds to the provided list of values. If an element in the list is strictly equal to 0, then it will be skipped. |
+| `.get()` |  `Array.<string>` | Gets an array where each element is separated by a zero. eg `["one", 0, "two", 0]` |
 | `.disable()` | `ClayItem` | `disabled` | Prevents this item from being edited by the user. |
 | `.enable()` | `ClayItem` | `enabled` | Allows this item to be edited by the user. |
 

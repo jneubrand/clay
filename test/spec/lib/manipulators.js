@@ -130,8 +130,10 @@ describe('manipulators', function() {
         { label: '3', value: 'three "quote' }
       ]
     };
-    testSetGet(item, ['one', 'two']);
-    testSetGet(item, ['three "quote']);
+    testSetGet(item, ['one', 'two'], ['one', 0, 'two', 0]);
+    testSetGet(item, ['one', 0, 'two', 0]);
+    testSetGet(item, ['one', 0, 'two'], ['one', 0, 'two', 0]);
+    testSetGet(item, ['three "quote', 0]);
     testSetGet(item, []);
     testSetGet(item, false, []);
     testDisable(item);
